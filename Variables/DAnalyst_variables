@@ -1,0 +1,105 @@
+# Data Analyst Prioritized Variables and Concepts
+
+# Essential for Data Analysis Workflows
+
+# 1. Data Variables
+# Text String Variable: Store and display a greeting message to the user
+textString = "Hello, World!"
+print("Text String Variable:", textString)
+
+# Numeric Variable: Hold a specific numeric value, such as a user's age or a counter
+number = 42
+print("Numeric Variable:", number)
+
+# List Variable: Manage a collection of ordered items, like a list of scores or tasks
+data_list = [1, 2, 3, 4, 5]
+print("List Variable:", data_list)
+
+# Dictionary Variable: Manage key-value pairs, useful for datasets and configurations
+data_dict = {"name": "John", "age": 42}
+print("Dictionary Variable:", data_dict)
+
+# Tuple Variable: Store a fixed set of related items, like coordinates or immutable configuration settings
+data_tuple = (1, 2, 3, 4, 5)
+print("Tuple Variable:", data_tuple)
+
+# Set Variable: Maintain a collection of unique items, useful for removing duplicates
+data_set = {1, 2, 3, 4, 5}
+print("Set Variable:", data_set)
+
+# Boolean Variable: Represent a true/false condition, often used in control flow
+is_valid = True
+print("Boolean Variable:", is_valid)
+
+# None Variable: Initialize a variable with no value, helpful for optional or unset values
+not_set = None
+print("None Variable:", not_set)
+
+# 2. Data Handling & Serialization
+# JSON Variable: Serialize and deserialize data
+import json
+data = {"name": "John", "age": 42}
+json_string = json.dumps(data)
+print("Serialized JSON:", json_string)
+print("Deserialized JSON:", json.loads(json_string))
+
+# CSV & File Variables: Read and write datasets
+import pandas as pd
+data = pd.read_csv("data.csv")
+print("Pandas DataFrame Description:\n", data.describe())
+
+# 3. Data Visualization
+# Matplotlib Plot Variable: Visualize data
+import matplotlib.pyplot as plt
+plt.plot([1, 2, 3, 4, 5], [1, 4, 9, 16, 25])
+plt.title("Data Visualization Example")
+plt.xlabel("X-axis")
+plt.ylabel("Y-axis")
+plt.show()
+
+# Seaborn Visualization Variable: Create advanced data visualizations
+import seaborn as sns
+sns.set(style="darkgrid")
+sns.histplot(data['age'], kde=True)
+plt.show()
+
+# 4. Numerical & Statistical Analysis
+# Math & Random Variables: Perform math operations and generate random numbers
+import math
+import random
+print("Square Root of 16:", math.sqrt(16))
+print("Random Integer (1-10):", random.randint(1, 10))
+
+# 5. Data Preprocessing & Manipulation
+# Pandas Data Science Variable: Analyze and manipulate tabular data
+data['new_column'] = data['age'] * 2
+print("Updated DataFrame with New Column:\n", data.head())
+
+# 6. Data Storage & Retrieval
+# Database Variable: Store and retrieve data using a database connection
+import sqlite3
+connection = sqlite3.connect("example.db")
+cursor = connection.cursor()
+cursor.execute("CREATE TABLE IF NOT EXISTS users (name TEXT, age INTEGER)")
+cursor.execute("INSERT INTO users (name, age) VALUES (?, ?)", ("John", 42))
+connection.commit()
+cursor.execute("SELECT * FROM users")
+print("Database Query Result:", cursor.fetchall())
+connection.close()
+
+# 7. Working with Dates and Times
+# Date and Time Variable: Manage and format dates
+from datetime import datetime
+print("Current DateTime:", datetime.now())
+
+# 8. Regular Expressions for Data Cleaning
+# Regular Expression Variable: Match patterns in strings
+import re
+pattern = re.compile(r"Hello, (\w+)!")
+match = pattern.match("Hello, John!")
+print("Extracted Name from String:", match.group(1))
+
+# 9. Data Exporting
+# Exporting to CSV
+data.to_csv("exported_data.csv", index=False)
+print("Data exported to 'exported_data.csv'")
