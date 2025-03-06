@@ -1,2 +1,2 @@
 # Python-Play-Ground
-Practicing my python skills
+Python showcase covering most of my python projects. 
